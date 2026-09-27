@@ -1,0 +1,693 @@
+<!DOCTYPE html>
+<html lang="es" data-theme="dark">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Design System y Biblioteca de Componentes del Portafolio de Gabriel Asunción. Tokens de diseño, paleta de colores, tipografía, espaciado y componentes reutilizables.">
+    <title>Design System &amp; Componentes | Gabriel Asunción</title>
+
+    <link rel="stylesheet" href="css/root.css">
+    <link rel="stylesheet" href="css/design-system.css">
+    <!-- También necesitamos algunos estilos de index para reutilizar componentes -->
+    <link rel="stylesheet" href="css/index.css">
+</head>
+
+<body>
+
+    <!-- ═══════════════════════════════
+         HEADER
+         ═══════════════════════════════ -->
+    <header class="header">
+        <div class="header__container">
+            <a href="index.html" class="logo">Gabriel<span>.dev</span></a>
+
+            <button class="menu-toggle" id="menuToggle" aria-label="Abrir menú" aria-expanded="false">☰</button>
+
+            <nav class="nav" id="navMenu" role="navigation" aria-label="Navegación del design system">
+                <ul class="nav__list">
+                    <li><a href="index.html" class="nav__link">&larr; Portafolio</a></li>
+                    <li><a href="#colores" class="nav__link">Colores</a></li>
+                    <li><a href="#tipografia" class="nav__link">Tipografía</a></li>
+                    <li><a href="#espaciado" class="nav__link">Espaciado</a></li>
+                    <li><a href="#bordes" class="nav__link">Bordes</a></li>
+                    <li><a href="#componentes" class="nav__link">Componentes</a></li>
+                </ul>
+            </nav>
+
+            <button class="theme-toggle" id="themeToggle" aria-label="Cambiar tema">☀️</button>
+        </div>
+    </header>
+
+    <main>
+
+        <!-- ═══════════════════════════════
+             HERO DEL DESIGN SYSTEM
+             ═══════════════════════════════ -->
+        <div class="ds-hero">
+            <div class="container">
+                <span class="ds-hero__eyebrow">
+                    <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                        <path
+                            d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
+                    </svg>
+                    Documentación Visual
+                </span>
+                <h1 class="ds-hero__title">Design System &amp; Biblioteca de Componentes</h1>
+                <p class="ds-hero__desc">
+                    Guía completa de los tokens de diseño, decisiones visuales y componentes UI
+                    modulares que estructuran el portafolio profesional de Gabriel Asunción.
+                </p>
+                <a href="index.html" class="btn btn--ghost btn--sm">&larr; Regresar al Portafolio</a>
+            </div>
+        </div>
+
+        <!-- ═══════════════════════════════
+             LAYOUT PRINCIPAL (SIDEBAR + CONTENIDO)
+             ═══════════════════════════════ -->
+        <div class="ds-layout">
+
+            <!-- SIDEBAR DE NAVEGACIÓN -->
+            <aside class="ds-sidebar" aria-label="Índice del Design System">
+                <p class="ds-sidebar__title">Contenido</p>
+                <a href="#colores" class="ds-sidebar__link active">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                        aria-hidden="true">
+                        <circle cx="12" cy="12" r="10" />
+                        <path
+                            d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z" />
+                    </svg>
+                    Colores &amp; Tokens
+                </a>
+                <a href="#tipografia" class="ds-sidebar__link">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                        aria-hidden="true">
+                        <polyline points="4 7 4 4 20 4 20 7" />
+                        <line x1="9" y1="20" x2="15" y2="20" />
+                        <line x1="12" y1="4" x2="12" y2="20" />
+                    </svg>
+                    Tipografía
+                </a>
+                <a href="#espaciado" class="ds-sidebar__link">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                        aria-hidden="true">
+                        <line x1="21" y1="10" x2="3" y2="10" />
+                        <line x1="21" y1="6" x2="3" y2="6" />
+                        <line x1="21" y1="14" x2="3" y2="14" />
+                        <line x1="21" y1="18" x2="3" y2="18" />
+                    </svg>
+                    Espaciado
+                </a>
+                <a href="#bordes" class="ds-sidebar__link">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                        aria-hidden="true">
+                        <rect x="3" y="3" width="18" height="18" rx="5" />
+                    </svg>
+                    Bordes &amp; Sombras
+                </a>
+                <a href="#componentes" class="ds-sidebar__link">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                        aria-hidden="true">
+                        <rect x="3" y="3" width="7" height="7" />
+                        <rect x="14" y="3" width="7" height="7" />
+                        <rect x="14" y="14" width="7" height="7" />
+                        <rect x="3" y="14" width="7" height="7" />
+                    </svg>
+                    Componentes
+                </a>
+            </aside>
+
+            <!-- CONTENIDO PRINCIPAL -->
+            <div class="ds-content">
+
+                <!-- ── 1. COLORES ── -->
+                <section id="colores" class="ds-section" aria-labelledby="colores-title">
+                    <header class="ds-section__header">
+                        <span class="ds-section__number">01 — Paleta &amp; Tokens</span>
+                        <h2 class="ds-section__title" id="colores-title">Colores &amp; Variables CSS</h2>
+                        <p class="ds-section__desc">
+                            Todas las decisiones cromáticas se definen como Custom Properties en
+                            <code>:root</code> y se sobrescriben en <code>[data-theme="light"]</code>
+                            para soporte dinámico de modo oscuro y claro.
+                        </p>
+                    </header>
+
+                    <div class="ds-palette">
+                        <article class="ds-swatch">
+                            <div class="ds-swatch__color" style="background:var(--color-primary);"></div>
+                            <div class="ds-swatch__info">
+                                <span class="ds-swatch__name">Primary</span>
+                                <code class="ds-swatch__var">--color-primary</code>
+                                <span class="ds-swatch__hex">#a78bfa (dark) / #6d28d9 (light)</span>
+                            </div>
+                        </article>
+                        <article class="ds-swatch">
+                            <div class="ds-swatch__color" style="background:var(--color-secondary);"></div>
+                            <div class="ds-swatch__info">
+                                <span class="ds-swatch__name">Secondary</span>
+                                <code class="ds-swatch__var">--color-secondary</code>
+                                <span class="ds-swatch__hex">#38bdf8 (dark) / #0284c7 (light)</span>
+                            </div>
+                        </article>
+                        <article class="ds-swatch">
+                            <div class="ds-swatch__color" style="background:var(--color-accent);"></div>
+                            <div class="ds-swatch__info">
+                                <span class="ds-swatch__name">Accent</span>
+                                <code class="ds-swatch__var">--color-accent</code>
+                                <span class="ds-swatch__hex">#f472b6 (dark) / #db2777 (light)</span>
+                            </div>
+                        </article>
+                        <article class="ds-swatch">
+                            <div class="ds-swatch__color"
+                                style="background:var(--color-bg); border:1px solid var(--color-border);"></div>
+                            <div class="ds-swatch__info">
+                                <span class="ds-swatch__name">Background</span>
+                                <code class="ds-swatch__var">--color-bg</code>
+                                <span class="ds-swatch__hex">#050b14 (dark) / #f8f9fc (light)</span>
+                            </div>
+                        </article>
+                        <article class="ds-swatch">
+                            <div class="ds-swatch__color"
+                                style="background:var(--color-surface); border:1px solid var(--color-border);"></div>
+                            <div class="ds-swatch__info">
+                                <span class="ds-swatch__name">Surface</span>
+                                <code class="ds-swatch__var">--color-surface</code>
+                                <span class="ds-swatch__hex">#0b1422 (dark) / #ffffff (light)</span>
+                            </div>
+                        </article>
+                        <article class="ds-swatch">
+                            <div class="ds-swatch__color"
+                                style="background:var(--color-card); border:1px solid var(--color-border);"></div>
+                            <div class="ds-swatch__info">
+                                <span class="ds-swatch__name">Card</span>
+                                <code class="ds-swatch__var">--color-card</code>
+                                <span class="ds-swatch__hex">#0f1d2e (dark) / #ffffff (light)</span>
+                            </div>
+                        </article>
+                        <article class="ds-swatch">
+                            <div class="ds-swatch__color" style="background:var(--color-text);"></div>
+                            <div class="ds-swatch__info">
+                                <span class="ds-swatch__name">Text</span>
+                                <code class="ds-swatch__var">--color-text</code>
+                                <span class="ds-swatch__hex">#e8edf5 (dark) / #0a0f1e (light)</span>
+                            </div>
+                        </article>
+                        <article class="ds-swatch">
+                            <div class="ds-swatch__color" style="background:var(--color-text-muted);"></div>
+                            <div class="ds-swatch__info">
+                                <span class="ds-swatch__name">Text Muted</span>
+                                <code class="ds-swatch__var">--color-text-muted</code>
+                                <span class="ds-swatch__hex">#7a8ba3 (dark) / #546070 (light)</span>
+                            </div>
+                        </article>
+                        <article class="ds-swatch">
+                            <div class="ds-swatch__color" style="background:var(--color-error);"></div>
+                            <div class="ds-swatch__info">
+                                <span class="ds-swatch__name">Error</span>
+                                <code class="ds-swatch__var">--color-error</code>
+                                <span class="ds-swatch__hex">#f87171 (dark) / #dc2626 (light)</span>
+                            </div>
+                        </article>
+                        <article class="ds-swatch">
+                            <div class="ds-swatch__color" style="background:var(--color-success);"></div>
+                            <div class="ds-swatch__info">
+                                <span class="ds-swatch__name">Success</span>
+                                <code class="ds-swatch__var">--color-success</code>
+                                <span class="ds-swatch__hex">#34d399 (dark) / #16a34a (light)</span>
+                            </div>
+                        </article>
+                    </div>
+
+                    <!-- Gradientes -->
+                    <div style="margin-top: var(--space-lg);">
+                        <p class="ds-section__desc" style="margin-bottom: var(--space-md);">
+                            <strong>Gradientes:</strong> Se usan como fondos de botones primarios, texto highlight y
+                            decoraciones.
+                        </p>
+                        <div style="display:flex; gap:var(--space-md); flex-wrap:wrap;">
+                            <div
+                                style="flex:1; min-width:200px; height:56px; border-radius:var(--radius-md); background:var(--gradient-primary); display:flex; align-items:center; justify-content:center;">
+                                <code style="color:#fff; font-size:.75rem;">--gradient-primary</code>
+                            </div>
+                            <div
+                                style="flex:1; min-width:200px; height:56px; border-radius:var(--radius-md); background:var(--gradient-accent); display:flex; align-items:center; justify-content:center;">
+                                <code style="color:#fff; font-size:.75rem;">--gradient-accent</code>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- ── 2. TIPOGRAFÍA ── -->
+                <section id="tipografia" class="ds-section" aria-labelledby="tipografia-title">
+                    <header class="ds-section__header">
+                        <span class="ds-section__number">02 — Tipografía</span>
+                        <h2 class="ds-section__title" id="tipografia-title">Jerarquía Tipográfica</h2>
+                        <p class="ds-section__desc">
+                            Fuente principal: <code>Space Grotesk</code> (headings y body).
+                            Fuente monoespaciada: <code>JetBrains Mono</code> (código y tokens).
+                            Interlineado base: <code>1.65</code>.
+                        </p>
+                    </header>
+
+                    <div class="ds-type-table-wrapper">
+                        <table class="ds-table">
+                            <thead>
+                                <tr>
+                                    <th>Elemento</th>
+                                    <th>Tamaño</th>
+                                    <th>Peso</th>
+                                    <th>Vista previa</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><code>h1</code></td>
+                                    <td><code>clamp(2.6rem, 5vw, 4.2rem)</code></td>
+                                    <td>700</td>
+                                    <td><span
+                                            style="font-size:2rem; font-weight:700; letter-spacing:-.03em; line-height:1.1;">Título
+                                            Principal</span></td>
+                                </tr>
+                                <tr>
+                                    <td><code>h2</code></td>
+                                    <td><code>clamp(2rem, 4vw, 2.75rem)</code></td>
+                                    <td>700</td>
+                                    <td><span style="font-size:1.6rem; font-weight:700; letter-spacing:-.025em;">Título
+                                            de Sección</span></td>
+                                </tr>
+                                <tr>
+                                    <td><code>h3</code></td>
+                                    <td><code>1.15 – 1.5rem</code></td>
+                                    <td>700</td>
+                                    <td><span style="font-size:1.15rem; font-weight:700;">Subtítulo de Tarjeta</span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td><code>p</code></td>
+                                    <td><code>1rem (16px)</code></td>
+                                    <td>400</td>
+                                    <td><span style="font-size:1rem; color:var(--color-text-muted);">Texto de párrafo
+                                            base, optimizado para legibilidad.</span></td>
+                                </tr>
+                                <tr>
+                                    <td><code>small / label</code></td>
+                                    <td><code>0.84rem (13px)</code></td>
+                                    <td>500–600</td>
+                                    <td><span style="font-size:.84rem; color:var(--color-text-muted);">Texto auxiliar,
+                                            etiquetas de formulario.</span></td>
+                                </tr>
+                                <tr>
+                                    <td><code>code / pre</code></td>
+                                    <td><code>0.82rem</code></td>
+                                    <td>400</td>
+                                    <td><code
+                                            style="font-size:.82rem; color:var(--color-primary);">--color-primary: #a78bfa;</code>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </section>
+
+                <!-- ── 3. ESPACIADO ── -->
+                <section id="espaciado" class="ds-section" aria-labelledby="espaciado-title">
+                    <header class="ds-section__header">
+                        <span class="ds-section__number">03 — Espaciado</span>
+                        <h2 class="ds-section__title" id="espaciado-title">Escala de Espaciado Modular</h2>
+                        <p class="ds-section__desc">
+                            Sistema de espaciado en potencias de 2 para crear ritmos verticales armónicos.
+                            Todos los valores son relativos (<code>rem</code>) para respetar las preferencias del
+                            usuario.
+                        </p>
+                    </header>
+
+                    <div class="ds-spacing-grid">
+                        <div class="ds-space-row">
+                            <div class="ds-space-bar" style="width: 4px;"></div>
+                            <span class="ds-space-label"><code>--space-xs</code> = 0.25rem (4px) — Separaciones mínimas,
+                                gap de íconos.</span>
+                        </div>
+                        <div class="ds-space-row">
+                            <div class="ds-space-bar" style="width: 8px;"></div>
+                            <span class="ds-space-label"><code>--space-sm</code> = 0.5rem (8px) — Gaps entre
+                                tags/badges.</span>
+                        </div>
+                        <div class="ds-space-row">
+                            <div class="ds-space-bar" style="width: 16px;"></div>
+                            <span class="ds-space-label"><code>--space-md</code> = 1rem (16px) — Padding interno de
+                                tarjetas y formularios.</span>
+                        </div>
+                        <div class="ds-space-row">
+                            <div class="ds-space-bar" style="width: 32px;"></div>
+                            <span class="ds-space-label"><code>--space-lg</code> = 2rem (32px) — Gaps de grillas,
+                                separación entre secciones de skills.</span>
+                        </div>
+                        <div class="ds-space-row">
+                            <div class="ds-space-bar" style="width: 64px;"></div>
+                            <span class="ds-space-label"><code>--space-xl</code> = 4rem (64px) — Padding vertical de
+                                secciones grandes.</span>
+                        </div>
+                        <div class="ds-space-row">
+                            <div class="ds-space-bar" style="width: 96px;"></div>
+                            <span class="ds-space-label"><code>--space-2xl</code> = 6rem (96px) — Padding entre
+                                secciones hero/principal.</span>
+                        </div>
+                        <div class="ds-space-row">
+                            <div class="ds-space-bar" style="width: 128px;"></div>
+                            <span class="ds-space-label"><code>--space-3xl</code> = 8rem (128px) — Padding mínimo del
+                                hero en desktop.</span>
+                        </div>
+                    </div>
+
+                    <div class="ds-type-table-wrapper" style="margin-top:var(--space-lg);">
+                        <table class="ds-table">
+                            <thead>
+                                <tr>
+                                    <th>Token</th>
+                                    <th>rem</th>
+                                    <th>px</th>
+                                    <th>Uso principal</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><code>--space-xs</code></td>
+                                    <td>0.25rem</td>
+                                    <td>4px</td>
+                                    <td>Gaps mínimos entre íconos/elementos inline</td>
+                                </tr>
+                                <tr>
+                                    <td><code>--space-sm</code></td>
+                                    <td>0.5rem</td>
+                                    <td>8px</td>
+                                    <td>Gap entre badges, padding de chips</td>
+                                </tr>
+                                <tr>
+                                    <td><code>--space-md</code></td>
+                                    <td>1rem</td>
+                                    <td>16px</td>
+                                    <td>Padding de tarjetas, gap de formulario</td>
+                                </tr>
+                                <tr>
+                                    <td><code>--space-lg</code></td>
+                                    <td>2rem</td>
+                                    <td>32px</td>
+                                    <td>Gap entre skill cards, padding de bloques</td>
+                                </tr>
+                                <tr>
+                                    <td><code>--space-xl</code></td>
+                                    <td>4rem</td>
+                                    <td>64px</td>
+                                    <td>Padding vertical de secciones</td>
+                                </tr>
+                                <tr>
+                                    <td><code>--space-2xl</code></td>
+                                    <td>6rem</td>
+                                    <td>96px</td>
+                                    <td>Separación entre secciones grandes</td>
+                                </tr>
+                                <tr>
+                                    <td><code>--space-3xl</code></td>
+                                    <td>8rem</td>
+                                    <td>128px</td>
+                                    <td>Padding mínimo del hero</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </section>
+
+                <!-- ── 4. BORDES & SOMBRAS ── -->
+                <section id="bordes" class="ds-section" aria-labelledby="bordes-title">
+                    <header class="ds-section__header">
+                        <span class="ds-section__number">04 — Bordes &amp; Sombras</span>
+                        <h2 class="ds-section__title" id="bordes-title">Bordes, Radios y Elevaciones</h2>
+                        <p class="ds-section__desc">
+                            Los radios de borde crean una jerarquía visual coherente.
+                            Las sombras expresan elevación relativa de cada componente.
+                        </p>
+                    </header>
+
+                    <!-- Radios -->
+                    <p
+                        style="font-size:.85rem; font-weight:700; letter-spacing:.08em; text-transform:uppercase; color:var(--color-text-muted); margin-bottom:var(--space-md);">
+                        Radios de borde</p>
+                    <div class="ds-radii-grid" style="margin-bottom:var(--space-xl);">
+                        <div class="ds-radius-item">
+                            <div class="ds-radius-box" style="border-radius:var(--radius-sm);"></div>
+                            <span class="ds-space-label"><code>--radius-sm</code><br>0.5rem / 8px</span>
+                        </div>
+                        <div class="ds-radius-item">
+                            <div class="ds-radius-box" style="border-radius:var(--radius-md);"></div>
+                            <span class="ds-space-label"><code>--radius-md</code><br>1rem / 16px</span>
+                        </div>
+                        <div class="ds-radius-item">
+                            <div class="ds-radius-box" style="border-radius:var(--radius-lg);"></div>
+                            <span class="ds-space-label"><code>--radius-lg</code><br>1.5rem / 24px</span>
+                        </div>
+                        <div class="ds-radius-item">
+                            <div class="ds-radius-box" style="border-radius:var(--radius-xl);"></div>
+                            <span class="ds-space-label"><code>--radius-xl</code><br>2rem / 32px</span>
+                        </div>
+                        <div class="ds-radius-item">
+                            <div class="ds-radius-box"
+                                style="border-radius:var(--radius-full); width:64px; height:64px;"></div>
+                            <span class="ds-space-label"><code>--radius-full</code><br>9999px</span>
+                        </div>
+                    </div>
+
+                    <!-- Sombras -->
+                    <p
+                        style="font-size:.85rem; font-weight:700; letter-spacing:.08em; text-transform:uppercase; color:var(--color-text-muted); margin-bottom:var(--space-md);">
+                        Elevaciones</p>
+                    <div class="ds-shadow-grid">
+                        <div class="ds-shadow-item">
+                            <div class="ds-shadow-box" style="box-shadow:var(--shadow-sm);"></div>
+                            <span class="ds-space-label"><code>--shadow-sm</code></span>
+                        </div>
+                        <div class="ds-shadow-item">
+                            <div class="ds-shadow-box" style="box-shadow:var(--shadow-md);"></div>
+                            <span class="ds-space-label"><code>--shadow-md</code></span>
+                        </div>
+                        <div class="ds-shadow-item">
+                            <div class="ds-shadow-box" style="box-shadow:var(--shadow-card);"></div>
+                            <span class="ds-space-label"><code>--shadow-card</code></span>
+                        </div>
+                        <div class="ds-shadow-item">
+                            <div class="ds-shadow-box"
+                                style="box-shadow:var(--shadow-glow); border-color:var(--color-border-glow);"></div>
+                            <span class="ds-space-label"><code>--shadow-glow</code></span>
+                        </div>
+                    </div>
+
+                    <!-- Transiciones -->
+                    <div style="margin-top:var(--space-xl);">
+                        <div class="ds-type-table-wrapper">
+                            <table class="ds-table">
+                                <thead>
+                                    <tr>
+                                        <th>Token</th>
+                                        <th>Valor</th>
+                                        <th>Uso</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td><code>--t-fast</code></td>
+                                        <td>0.18s cubic-bezier(ease-in-out)</td>
+                                        <td>Hover de links, íconos, bordes</td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>--t-base</code></td>
+                                        <td>0.35s cubic-bezier(ease-out)</td>
+                                        <td>Hover de tarjetas, filtros de proyectos</td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>--t-slow</code></td>
+                                        <td>0.6s cubic-bezier(ease-out)</td>
+                                        <td>Zoom de imágenes en hover</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- ── 5. COMPONENTES ── -->
+                <section id="componentes" class="ds-section" aria-labelledby="componentes-title">
+                    <header class="ds-section__header">
+                        <span class="ds-section__number">05 — Componentes</span>
+                        <h2 class="ds-section__title" id="componentes-title">Muestrario de Componentes</h2>
+                        <p class="ds-section__desc">
+                            Todos los componentes de UI reutilizables del portafolio, con sus variantes y estados.
+                        </p>
+                    </header>
+
+                    <!-- BOTONES -->
+                    <div class="ds-component-block" style="margin-bottom:var(--space-lg);">
+                        <h3>Botones (.btn)</h3>
+                        <div class="ds-row">
+                            <button class="btn btn--primary">Botón Primario</button>
+                            <button class="btn btn--ghost">Botón Ghost</button>
+                            <button class="btn btn--primary btn--sm">Primario sm</button>
+                            <button class="btn btn--ghost btn--sm">Ghost sm</button>
+                        </div>
+                        <div class="ds-row">
+                            <button class="btn--filter active">Filtro Activo</button>
+                            <button class="btn--filter">Filtro Inactivo</button>
+                            <button class="btn--filter">Frontend</button>
+                            <button class="btn--filter">Backend</button>
+                        </div>
+                    </div>
+
+                    <!-- BADGES -->
+                    <div class="ds-component-block" style="margin-bottom:var(--space-lg);">
+                        <h3>Badges &amp; Chips (.badge)</h3>
+                        <div class="ds-row">
+                            <span class="badge">HTML5</span>
+                            <span class="badge">CSS3</span>
+                            <span class="badge">JavaScript</span>
+                            <span class="badge">Node.js</span>
+                            <span class="badge">REST API</span>
+                            <span class="badge">PostgreSQL</span>
+                        </div>
+                    </div>
+
+                    <!-- FORMULARIO -->
+                    <div class="ds-component-block" style="margin-bottom:var(--space-lg);">
+                        <h3>Campos de Formulario (.form-group)</h3>
+                        <div style="max-width:520px; display:flex; flex-direction:column; gap:var(--space-md);">
+                            <div class="form-group">
+                                <label for="dsInputDemo">Nombre completo
+                                    <code>&lt;label&gt; + &lt;input&gt;</code></label>
+                                <input type="text" id="dsInputDemo" placeholder="Ej. Gabriel Asunción"
+                                    value="Texto de muestra" readonly>
+                                <span class="error-message"></span>
+                            </div>
+                            <div class="form-group">
+                                <label for="dsEmailDemo">Correo electrónico</label>
+                                <input type="email" id="dsEmailDemo" placeholder="tu@correo.com" readonly
+                                    value="gabriel@email.com">
+                                <span class="error-message">Ejemplo de mensaje de error de validación</span>
+                            </div>
+                            <div class="form-group">
+                                <label for="dsTextareaDemo">Mensaje <code>&lt;textarea&gt;</code></label>
+                                <textarea id="dsTextareaDemo" rows="3"
+                                    readonly>Texto de muestra. Los campos heredan la tipografía y transiciones definidas en las variables CSS.</textarea>
+                                <span class="error-message"></span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- SKILL CARD -->
+                    <div class="ds-component-block" style="margin-bottom:var(--space-lg);">
+                        <h3>Tarjeta de Habilidad (.skill-card)</h3>
+                        <div style="display:flex; gap:var(--space-sm); flex-wrap:wrap; max-width:600px;">
+                            <article class="skill-card">
+                                <div class="skill-card__icon" aria-hidden="true">
+                                    <svg viewBox="0 0 24 24">
+                                        <rect width="24" height="24" rx="4" fill="#F7DF1E" />
+                                        <path
+                                            d="M6.5 18.2c.4.6 1 .9 1.7.9.8 0 1.2-.4 1.2-1 0-.6-.5-.9-1.3-1.2-1.3-.5-2.2-1.1-2.2-2.5 0-1.5 1.2-2.6 3-2.6 1.3 0 2.2.5 2.7 1.4l-1.4.9c-.3-.5-.7-.7-1.3-.7-.6 0-1 .3-1 .8 0 .5.3.7 1.1 1 1.4.6 2.4 1.2 2.4 2.7 0 1.7-1.3 2.8-3.3 2.8-1.7 0-2.8-.7-3.3-1.8l1.7-.7zm8.4.3c.4.5.9.8 1.6.8.7 0 1.2-.4 1.2-1.4v-5.9h2v6c0 2.1-1.2 3.1-3.2 3.1-1.6 0-2.6-.8-3-1.9l1.4-.7z"
+                                            fill="#000" />
+                                    </svg>
+                                </div>
+                                <span class="skill-card__name">JavaScript</span>
+                            </article>
+                            <article class="skill-card">
+                                <div class="skill-card__icon" aria-hidden="true">
+                                    <svg viewBox="0 0 24 24">
+                                        <path fill="#3776AB"
+                                            d="M11.9 2c-5.2 0-4.9 2.3-4.9 2.3l.01 2.34h5V7.4H4.5S2 7.1 2 12.3c0 5.2 2.2 5 2.2 5h1.3v-1.8s-.1-2.2 2.2-2.2h5.1s2.1.04 2.1-2.1V4.1s.3-2.1-3-2.1zm-2.8 1.6a.9.9 0 1 1 0 1.8.9.9 0 0 1 0-1.8z" />
+                                        <path fill="#FFD438"
+                                            d="M12.1 22c5.2 0 4.9-2.3 4.9-2.3l-.01-2.34h-5v-.76h7.51s2.5.2 2.5-5c0-5.2-2.2-5-2.2-5h-1.3v1.8s.1 2.2-2.2 2.2h-5.1s-2.1-.04-2.1 2.1v9.5s-.3 2.1 3 2.1zm2.8-1.6a.9.9 0 1 1 0-1.8.9.9 0 0 1 0 1.8z" />
+                                    </svg>
+                                </div>
+                                <span class="skill-card__name">Python</span>
+                            </article>
+                            <article class="skill-card">
+                                <div class="skill-card__icon" aria-hidden="true">
+                                    <svg viewBox="0 0 24 24">
+                                        <path fill="#F05032"
+                                            d="M21.6 10.9L13.1 2.4c-.6-.6-1.5-.6-2.1 0L8.7 4.7l2.8 2.8c.6-.2 1.3 0 1.8.5.5.5.6 1.3.4 1.9l2.7 2.7c.6-.2 1.3 0 1.9.4.8.8.8 2.1 0 2.9-.8.8-2.1.8-2.9 0-.6-.6-.7-1.4-.4-2.1l-2.5-2.5v5.3c.2.2.3.4.3.7 0 1-.8 1.8-1.8 1.8s-1.8-.8-1.8-1.8c0-.7.4-1.3 1-1.6V8.9c-.6-.3-1-.9-1-1.6 0-.6.3-1.2.7-1.5L4.7 8.7c-.6.6-.6 1.5 0 2.1l8.5 8.5c.6.6 1.5.6 2.1 0l6.3-6.3c.6-.6.6-1.5 0-2.1z" />
+                                    </svg>
+                                </div>
+                                <span class="skill-card__name">Git</span>
+                            </article>
+                        </div>
+                    </div>
+
+                    <!-- PROJECT CARD -->
+                    <div class="ds-component-block" style="margin-bottom:var(--space-lg);">
+                        <h3>Tarjeta de Proyecto (.card-project)</h3>
+                        <div style="max-width:400px;">
+                            <article class="card-project">
+                                <div class="card-project__accent"></div>
+                                <figure class="card-project__figure">
+                                    <img src="./img/pro1.png" alt="Demostración de componente card"
+                                        class="card-project__img" loading="lazy">
+                                    <figcaption>Vista previa del componente Card reutilizable</figcaption>
+                                </figure>
+                                <div class="card-project__body">
+                                    <h3>Tienda Online E-commerce</h3>
+                                    <p class="card-project__problem">
+                                        <strong>Problema que resuelve:</strong> Facilita una experiencia de compra
+                                        intuitiva y gestión reactiva del carrito multidispositivo.
+                                    </p>
+                                    <div class="card-project__tags">
+                                        <span class="badge">HTML5</span>
+                                        <span class="badge">CSS3</span>
+                                        <span class="badge">JavaScript</span>
+                                    </div>
+                                    <div class="card-project__links">
+                                        <a href="#" class="btn btn--ghost btn--sm">Repositorio</a>
+                                        <a href="#" class="btn btn--primary btn--sm">Ver Proyecto</a>
+                                    </div>
+                                </div>
+                            </article>
+                        </div>
+                    </div>
+
+                    <!-- NAVBAR DEMO -->
+                    <div class="ds-component-block">
+                        <h3>Barra de Navegación (.header &amp; .nav)</h3>
+                        <div
+                            style="border: 1px solid var(--color-border); border-radius: var(--radius-md); padding: 0 var(--space-md); background: var(--color-card); display: flex; justify-content: space-between; align-items: center; height: 56px;">
+                            <a href="#" class="logo"
+                                style="font-size:1.2rem; pointer-events:none;">Gabriel<span>.dev</span></a>
+                            <div style="display:flex; gap:var(--space-lg);">
+                                <span class="nav__link" style="color:var(--color-primary);">Inicio</span>
+                                <span class="nav__link">Sobre mí</span>
+                                <span class="nav__link">Skills</span>
+                                <span class="nav__link">Contacto</span>
+                            </div>
+                            <button class="theme-toggle" style="pointer-events:none;">🌙</button>
+                        </div>
+                    </div>
+
+                </section>
+
+            </div><!-- /ds-content -->
+        </div><!-- /ds-layout -->
+
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="container footer__container">
+            <p>&copy; 2026 Gabriel Asunción &mdash; Design System.</p>
+            <div class="footer__socials">
+                <a href="index.html">&larr; Volver al Portafolio</a>
+                <a href="https://github.com/gabriel-asuncion-20" target="_blank" rel="noopener noreferrer">GitHub</a>
+            </div>
+        </div>
+    </footer>
+
+    <button class="back-to-top" id="backToTop" aria-label="Volver al inicio">↑</button>
+
+    <script src="js/main.js"></script>
+
+</body>
+
+</html>

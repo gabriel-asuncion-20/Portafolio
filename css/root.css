@@ -1,0 +1,295 @@
+/* ==========================================
+   ROOT.CSS — DESIGN SYSTEM TOKENS & BASE
+   Portafolio Gabriel Asunción
+   ========================================== */
+
+/* ─── Tipografías ─── */
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap');
+
+/* ─── Variables Globales (Tema Oscuro por defecto) ─── */
+:root {
+    /* Paleta Principal */
+    --color-primary:        #a78bfa;        /* violeta suave */
+    --color-primary-hover:  #c4b5fd;
+    --color-primary-dim:    rgba(167, 139, 250, 0.12);
+    --color-secondary:      #38bdf8;        /* cyan */
+    --color-secondary-dim:  rgba(56, 189, 248, 0.10);
+    --color-accent:         #f472b6;        /* pink */
+
+    /* Gradientes */
+    --gradient-primary: linear-gradient(135deg, #a78bfa 0%, #38bdf8 100%);
+    --gradient-accent:  linear-gradient(135deg, #f472b6 0%, #a78bfa 100%);
+    --gradient-hero:    radial-gradient(ellipse 80% 60% at 50% 0%, rgba(167,139,250,0.18) 0%, transparent 70%);
+
+    /* Superficies */
+    --color-bg:          #050b14;
+    --color-surface:     #0b1422;
+    --color-card:        #0f1d2e;
+    --color-card-hover:  #13243a;
+    --color-border:      rgba(255,255,255,0.07);
+    --color-border-glow: rgba(167,139,250,0.35);
+
+    /* Textos */
+    --color-text:        #e8edf5;
+    --color-text-muted:  #7a8ba3;
+    --color-text-faint:  #3d5068;
+
+    /* Feedback */
+    --color-error:        #f87171;
+    --color-error-dim:    rgba(248,113,113,0.1);
+    --color-success:      #34d399;
+    --color-success-dim:  rgba(52,211,153,0.1);
+
+    /* Tipografías */
+    --font-heading: 'Space Grotesk', -apple-system, sans-serif;
+    --font-body:    'Space Grotesk', -apple-system, sans-serif;
+    --font-mono:    'JetBrains Mono', monospace;
+
+    /* Espaciado Modular */
+    --space-xs:  0.25rem;   /* 4px  */
+    --space-sm:  0.5rem;    /* 8px  */
+    --space-md:  1rem;      /* 16px */
+    --space-lg:  2rem;      /* 32px */
+    --space-xl:  4rem;      /* 64px */
+    --space-2xl: 6rem;      /* 96px */
+    --space-3xl: 8rem;      /* 128px */
+
+    /* Bordes */
+    --radius-sm:   0.5rem;
+    --radius-md:   1rem;
+    --radius-lg:   1.5rem;
+    --radius-xl:   2rem;
+    --radius-full: 9999px;
+
+    /* Sombras */
+    --shadow-sm:    0 1px 3px rgba(0,0,0,0.4);
+    --shadow-md:    0 4px 20px rgba(0,0,0,0.5);
+    --shadow-card:  0 8px 40px rgba(0,0,0,0.5);
+    --shadow-glow:  0 0 40px rgba(167,139,250,0.25);
+    --shadow-glow-cyan: 0 0 35px rgba(56,189,248,0.2);
+
+    /* Transiciones */
+    --ease-out:     cubic-bezier(0.16, 1, 0.3, 1);
+    --ease-in-out:  cubic-bezier(0.4, 0, 0.2, 1);
+    --t-fast:  0.18s var(--ease-in-out);
+    --t-base:  0.35s var(--ease-out);
+    --t-slow:  0.6s  var(--ease-out);
+}
+
+/* ─── Tema Claro (override) ─── */
+[data-theme="light"] {
+    --color-primary:        #6d28d9;
+    --color-primary-hover:  #5b21b6;
+    --color-primary-dim:    rgba(109,40,217,0.1);
+    --color-secondary:      #0284c7;
+    --color-secondary-dim:  rgba(2,132,199,0.1);
+    --color-accent:         #db2777;
+
+    --gradient-primary: linear-gradient(135deg, #6d28d9 0%, #0284c7 100%);
+    --gradient-accent:  linear-gradient(135deg, #db2777 0%, #6d28d9 100%);
+    --gradient-hero:    radial-gradient(ellipse 80% 60% at 50% 0%, rgba(109,40,217,0.1) 0%, transparent 70%);
+
+    --color-bg:          #f8f9fc;
+    --color-surface:     #ffffff;
+    --color-card:        #ffffff;
+    --color-card-hover:  #f1f5f9;
+    --color-border:      rgba(0,0,0,0.08);
+    --color-border-glow: rgba(109,40,217,0.25);
+
+    --color-text:        #0a0f1e;
+    --color-text-muted:  #546070;
+    --color-text-faint:  #9baab8;
+
+    --color-error:        #dc2626;
+    --color-error-dim:    rgba(220,38,38,0.1);
+    --color-success:      #16a34a;
+    --color-success-dim:  rgba(22,163,74,0.1);
+
+    --shadow-sm:    0 1px 3px rgba(0,0,0,0.08);
+    --shadow-md:    0 4px 20px rgba(0,0,0,0.06);
+    --shadow-card:  0 8px 40px rgba(0,0,0,0.08);
+    --shadow-glow:  0 0 40px rgba(109,40,217,0.15);
+    --shadow-glow-cyan: 0 0 35px rgba(2,132,199,0.1);
+}
+
+/* ==========================================
+   RESET & BASE
+   ========================================== */
+*, *::before, *::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    font-size: 16px;
+    -webkit-text-size-adjust: 100%;
+}
+
+body {
+    font-family: var(--font-body);
+    background-color: var(--color-bg);
+    color: var(--color-text);
+    line-height: 1.65;
+    overflow-x: hidden;
+    transition: background-color var(--t-base), color var(--t-base);
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-heading);
+    font-weight: 700;
+    letter-spacing: -0.025em;
+    color: var(--color-text);
+    line-height: 1.2;
+}
+
+a {
+    color: var(--color-primary);
+    text-decoration: none;
+    transition: color var(--t-fast);
+}
+
+a:hover { color: var(--color-primary-hover); }
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+code {
+    font-family: var(--font-mono);
+}
+
+/* ─── Utilidades globales ─── */
+.container {
+    width: 100%;
+    max-width: 1180px;
+    margin: 0 auto;
+    padding: 0 var(--space-lg);
+}
+
+.section {
+    padding: var(--space-3xl) 0;
+    position: relative;
+}
+
+.section--surface {
+    background-color: var(--color-surface);
+}
+
+.section__label {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.45rem;
+    font-size: 0.78rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--color-primary);
+    margin-bottom: var(--space-sm);
+}
+
+.section__title {
+    font-size: clamp(2rem, 4vw, 2.75rem);
+    margin-bottom: var(--space-sm);
+    letter-spacing: -0.03em;
+}
+
+.section__title--center { text-align: center; }
+
+.section__desc {
+    font-size: 1.05rem;
+    color: var(--color-text-muted);
+    max-width: 620px;
+    line-height: 1.8;
+}
+
+.section__desc--center {
+    margin: 0 auto var(--space-xl);
+    text-align: center;
+}
+
+/* ─── Botones compartidos ─── */
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    padding: 0.75rem 1.6rem;
+    font-family: var(--font-heading);
+    font-weight: 600;
+    font-size: 0.92rem;
+    letter-spacing: 0.01em;
+    border-radius: var(--radius-sm);
+    border: 1.5px solid transparent;
+    cursor: pointer;
+    transition: all var(--t-base);
+    text-decoration: none;
+    white-space: nowrap;
+    position: relative;
+    overflow: hidden;
+}
+
+.btn::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: rgba(255,255,255,0.08);
+    opacity: 0;
+    transition: opacity var(--t-fast);
+}
+
+.btn:hover::after { opacity: 1; }
+
+.btn:active { transform: scale(0.97); }
+
+.btn--primary {
+    background: var(--gradient-primary);
+    color: #fff;
+    border-color: transparent;
+    box-shadow: 0 4px 20px rgba(167,139,250,0.3);
+}
+
+.btn--primary:hover {
+    color: #fff;
+    transform: translateY(-3px);
+    box-shadow: 0 8px 28px rgba(167,139,250,0.45);
+}
+
+.btn--ghost {
+    background: transparent;
+    border-color: var(--color-border);
+    color: var(--color-text);
+}
+
+.btn--ghost:hover {
+    border-color: var(--color-primary);
+    color: var(--color-primary);
+    background: var(--color-primary-dim);
+    transform: translateY(-3px);
+}
+
+.btn--sm {
+    padding: 0.5rem 1rem;
+    font-size: 0.84rem;
+}
+
+/* ─── Badge / Chip ─── */
+.badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.3rem;
+    padding: 0.3rem 0.85rem;
+    border-radius: var(--radius-full);
+    font-size: 0.78rem;
+    font-weight: 600;
+    letter-spacing: 0.01em;
+    background-color: var(--color-primary-dim);
+    color: var(--color-primary);
+    border: 1px solid var(--color-border-glow);
+}
+
+/* ─── Text muted helper ─── */
+.text-muted { color: var(--color-text-muted); }

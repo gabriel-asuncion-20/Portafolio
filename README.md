@@ -9,7 +9,7 @@ Portafolio web profesional desarrollado con **HTML5 semántico**, **CSS3 puro co
 - **Nombre:** Gabriel Asunción
 - **Perfil:** Desarrollador de Software / Web Fullstack Junior
 - **GitHub:** [gabriel-asuncion-20](https://github.com/gabriel-asuncion-20)
-- **Especialidad:** JavaScript (ES6+), Node.js, Frontend interactivo, APIs RESTful y maquetación semántica.
+- **Especialidad:** JavaScript, Python, C#, .NET, HTML/CSS, PostgreSQL, SQL Server, APIs REST, Antigravity y control de versiones con Git.
 
 ---
 
@@ -81,10 +81,11 @@ El sitio implementa 5 funcionalidades con JavaScript puro:
 ```text
 portafolio-main/
 │
-├── index.html       # Estructura semántica HTML5 y contenido del portafolio
-├── style.css        # Hoja de estilos con CSS Custom Properties y Responsive Design
-├── script.js        # Lógica interactiva en Vanilla JavaScript
-└── README.md        # Documentación técnica del proyecto
+├── index.html           # Estructura semántica HTML5 y portafolio principal
+├── design-system.html   # Página dedicada de documentación del Design System y componentes
+├── style.css            # Hoja de estilos con CSS Custom Properties y Responsive Design
+├── script.js            # Lógica interactiva en Vanilla JavaScript
+└── README.md            # Documentación técnica del proyecto
 ```
 
 ---

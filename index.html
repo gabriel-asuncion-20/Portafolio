@@ -1,178 +1,398 @@
 <!DOCTYPE html>
-<html lang="es" data-theme="light">
+<html lang="es" data-theme="dark">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Portafolio profesional de Gabriel Asunción - Desarrollador de Software y Web. Proyectos, habilidades técnicas y arquitectura de componentes.">
+    <meta name="description"
+        content="Portafolio profesional de Gabriel Asunción — Desarrollador de Software especializado en desarrollo web fullstack, APIs RESTful y aplicaciones interactivas.">
     <title>Gabriel Asunción | Portafolio Profesional</title>
-    <link rel="stylesheet" href="style.css">
+
+    <!-- CSS: primero el sistema de diseño, luego los estilos de la página -->
+    <link rel="stylesheet" href="css/root.css">
+    <link rel="stylesheet" href="css/index.css">
 </head>
 
 <body>
 
-    <!-- NAVEGACIÓN -->
+    <!-- ═══════════════════════════════
+         HEADER / NAVEGACIÓN
+         ═══════════════════════════════ -->
     <header class="header">
-        <div class="container header__container">
+        <div class="header__container">
             <a href="#inicio" class="logo">Gabriel<span>.dev</span></a>
 
-            <button class="menu-toggle" id="menuToggle" aria-label="Abrir menú">
+            <button class="menu-toggle" id="menuToggle" aria-label="Abrir menú" aria-expanded="false">
                 ☰
             </button>
 
-            <nav class="nav" id="navMenu">
+            <nav class="nav" id="navMenu" role="navigation" aria-label="Navegación principal">
                 <ul class="nav__list">
                     <li><a href="#inicio" class="nav__link">Inicio</a></li>
                     <li><a href="#sobre-mi" class="nav__link">Sobre mí</a></li>
                     <li><a href="#skills" class="nav__link">Skills</a></li>
                     <li><a href="#proyectos" class="nav__link">Proyectos</a></li>
-                    <li><a href="#design-system" class="nav__link">Design System</a></li>
+                    <li><a href="design-system.html" class="nav__link">Design System</a></li>
                     <li><a href="#contacto" class="nav__link">Contacto</a></li>
                 </ul>
             </nav>
 
-            <button class="theme-toggle" id="themeToggle" aria-label="Cambiar tema">🌙</button>
+            <button class="theme-toggle" id="themeToggle" aria-label="Cambiar tema">☀️</button>
         </div>
     </header>
 
     <main>
-        <!-- INICIO / PRESENTACIÓN -->
-        <section id="inicio" class="hero section">
+
+        <!-- ═══════════════════════════════
+             INICIO / PRESENTACIÓN
+             ═══════════════════════════════ -->
+        <section id="inicio" class="hero section" aria-labelledby="hero-title">
             <div class="container hero__container">
+
+                <!-- Columna izquierda: texto -->
                 <div class="hero__content">
-                    <span class="badge">Disponible para proyectos</span>
-                    <h1 class="hero__title">Hola, soy <span class="highlight">Gabriel Asunción</span></h1>
-                    <p class="hero__subtitle">Desarrollador de Software enfocado en desarrollo Web Frontend, Backend con APIs RESTful y aplicaciones interactivas accesibles y escalables.</p>
+                    <span class="hero__availability">Disponible para proyectos</span>
+
+                    <h1 class="hero__title" id="hero-title">
+                        <span class="line">Hola, soy</span>
+                        <span class="line gradient-text">Gabriel Asunción</span>
+                    </h1>
+
+                    <p class="hero__subtitle">
+                        Desarrollador de Software enfocado en desarrollo Web Fullstack —
+                        interfaces modernas, APIs RESTful robustas y aplicaciones
+                        interactivas, accesibles y escalables.
+                    </p>
+
                     <div class="hero__actions">
                         <a href="#proyectos" class="btn btn--primary">Ver Proyectos</a>
-                        <a href="#contacto" class="btn btn--secondary">Contactar</a>
+                        <a href="#contacto" class="btn btn--ghost">Contactar</a>
                     </div>
                 </div>
-                <figure class="hero__figure">
-                    <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&q=80&w=400"
-                        alt="Fotografía profesional de Gabriel Asunción" class="hero__img">
-                    <figcaption>Gabriel Asunción &bull; Desarrollador de Software</figcaption>
-                </figure>
+
+                <!-- Columna derecha: foto -->
+                <div class="hero__visual">
+                    <div class="hero__ring">
+                        <figure class="hero__figure">
+                            <img src="./img/foto gabriel.jpg" alt="Fotografía profesional de Gabriel Asunción"
+                                class="hero__img" width="290" height="290">
+                            <figcaption>Gabriel Asunción &bull; Desarrollador de Software</figcaption>
+                        </figure>
+                    </div>
+                </div>
+
             </div>
         </section>
 
-        <!-- SOBRE MÍ -->
-        <section id="sobre-mi" class="section">
+        <!-- ═══════════════════════════════
+             SOBRE MÍ
+             ═══════════════════════════════ -->
+        <section id="sobre-mi" class="section section--surface" aria-labelledby="about-title">
             <div class="container">
-                <h2 class="section__title">Sobre mí</h2>
-                <div class="about__grid">
+                <span class="section__label">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+                        aria-hidden="true">
+                        <circle cx="12" cy="8" r="4" />
+                        <path d="M6 20v-2a6 6 0 0 1 12 0v2" />
+                    </svg>
+                    Acerca de mí
+                </span>
+                <h2 class="section__title" id="about-title">Sobre mí</h2>
+
+                <div class="about__layout">
+                    <!-- Texto principal -->
                     <div class="about__text">
-                        <p>Estudiante y entusiasta del desarrollo de software y la ingeniería web. Me apasiona diseñar e implementar aplicaciones funcionales, combinando interfaces de usuario limpias y responsivas con servicios backend estructurados y seguros.</p>
-                        <p>Me enfoco en escribir código semántico, escalable y mantenible, aplicando estándares modernos de desarrollo, patrones de arquitectura limpia y control de versiones colaborativo.</p>
+                        <p>
+                            Estudiante y entusiasta del desarrollo de software e ingeniería web.
+                            Me apasiona diseñar e implementar aplicaciones funcionales que combinan
+                            interfaces de usuario limpias y responsivas con servicios backend
+                            estructurados y seguros.
+                        </p>
+                        <p>
+                            Disfruto resolver problemas reales a través del código, siempre
+                            buscando las mejores prácticas de arquitectura, rendimiento y
+                            accesibilidad. Trabajo cómodamente en entornos fullstack,
+                            tanto en el lado cliente como en el servidor.
+                        </p>
                     </div>
-                    <aside class="about__info">
-                        <h3>Perfil & Formación</h3>
-                        <ul>
-                            <li><strong>Perfil:</strong> Desarrollador Web Fullstack Junior</li>
-                            <li><strong>Enfoque:</strong> JavaScript, Node.js, Frontend & APIs RESTful</li>
-                            <li><strong>Intereses:</strong> Arquitectura Web, UI Systems, Rendimiento & Accesibilidad</li>
-                            <li><strong>Modalidad:</strong> Remoto / Híbrido</li>
-                        </ul>
+
+                    <!-- Info / Perfil -->
+                    <aside class="about__info" aria-label="Perfil y formación">
+                        <p class="about__info-title">Perfil &amp; Información</p>
+
+                        <div class="about__info-item">
+                            <span class="about__info-label">Perfil</span>
+                            <span class="about__info-value">Desarrollador Web Fullstack Junior</span>
+                        </div>
+                        <div class="about__info-item">
+                            <span class="about__info-label">Enfoque</span>
+                            <span class="about__info-value">JavaScript, Python, C#, .NET &amp; APIs RESTful</span>
+                        </div>
+                        <div class="about__info-item">
+                            <span class="about__info-label">Intereses</span>
+                            <span class="about__info-value">Arquitectura Web, Bases de Datos, Rendimiento &amp;
+                                Accesibilidad</span>
+                        </div>
+                        <div class="about__info-item">
+                            <span class="about__info-label">Modalidad</span>
+                            <span class="about__info-value">Remoto / Híbrido</span>
+                        </div>
                     </aside>
                 </div>
             </div>
         </section>
 
-        <!-- SKILLS -->
-        <section id="skills" class="section surface-bg">
+        <!-- ═══════════════════════════════
+             HABILIDADES TÉCNICAS
+             ═══════════════════════════════ -->
+        <section id="skills" class="section" aria-labelledby="skills-title">
             <div class="container">
-                <h2 class="section__title">Habilidades Técnicas</h2>
-                <div class="skills__grid">
+                <span class="section__label">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+                        aria-hidden="true">
+                        <polyline points="16 18 22 12 16 6" />
+                        <polyline points="8 6 2 12 8 18" />
+                    </svg>
+                    Stack tecnológico
+                </span>
+                <h2 class="section__title section__title--center" id="skills-title">Habilidades Técnicas</h2>
+                <p class="section__desc section__desc--center">
+                    Lenguajes, frameworks, bases de datos y herramientas que utilizo en mis proyectos.
+                </p>
 
-                    <article class="skill-card">
-                        <div class="skill-card__header">
-                            <span class="skill-card__icon" aria-hidden="true">🌐</span>
-                            <span class="skill-card__category">Frontend</span>
+                <div class="skills__wrapper">
+
+                    <!-- Frontend -->
+                    <div class="skills__category">
+                        <header class="skills__category-header">
+                            <svg class="skills__category-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                                <rect x="2" y="3" width="20" height="14" rx="2" ry="2" />
+                                <line x1="8" y1="21" x2="16" y2="21" />
+                                <line x1="12" y1="17" x2="12" y2="21" />
+                            </svg>
+                            <span class="skills__category-name">Frontend</span>
+                        </header>
+                        <div class="skills__grid">
+
+                            <article class="skill-card">
+                                <div class="skill-card__icon" aria-hidden="true">
+                                    <svg viewBox="0 0 24 24">
+                                        <path fill="#F7DF1E" d="M0 0h24v24H0z" />
+                                        <path
+                                            d="M11 17.5c.4.7 1 1 1.7 1 .9 0 1.3-.4 1.3-1.1 0-.7-.5-1-1.4-1.3-1.4-.5-2.3-1.2-2.3-2.6 0-1.6 1.3-2.7 3.1-2.7 1.4 0 2.3.5 2.8 1.5l-1.5 1c-.3-.5-.7-.8-1.3-.8-.6 0-1 .3-1 .8 0 .5.3.8 1.2 1.1 1.5.6 2.5 1.2 2.5 2.8 0 1.8-1.4 2.9-3.4 2.9-1.8 0-2.9-.8-3.4-2l1.7-.6z" />
+                                    </svg>
+                                </div>
+                                <span class="skill-card__name">JavaScript ES6+</span>
+                            </article>
+
+                            <article class="skill-card">
+                                <div class="skill-card__icon" aria-hidden="true">
+                                    <svg viewBox="0 0 24 24">
+                                        <rect width="24" height="24" rx="4" fill="#1572B6" />
+                                        <path fill="#fff"
+                                            d="M6 3l.7 8.5 5.3 1.5 5.3-1.5.7-8.5H6zm9.6 5.3l-.1 1.1h-4.1v1.1h3.9l-.4 4.4-3.4 1-3.4-1-.2-2.7h1.8l.1 1.5 1.7.5 1.7-.5.2-2.1H8.2l-.4-4.6h8.4l-.6 1.3z" />
+                                    </svg>
+                                </div>
+                                <span class="skill-card__name">CSS Avanzado</span>
+                            </article>
+
+                            <article class="skill-card">
+                                <div class="skill-card__icon" aria-hidden="true">
+                                    <svg viewBox="0 0 24 24">
+                                        <rect width="24" height="24" rx="4" fill="#000" />
+                                        <path fill="#fff" d="M6 6h12v2H6zM6 11h12v2H6zM6 16h8v2H6z" />
+                                    </svg>
+                                </div>
+                                <span class="skill-card__name">Responsive Design</span>
+                            </article>
+
                         </div>
-                        <h3>HTML5 & CSS3</h3>
-                        <p class="skill-card__level">Nivel: Avanzado</p>
-                        <p>Estructura semántica rigurosa, maquetación con Flexbox y CSS Grid, Custom Properties, diseño responsivo y accesibilidad web.</p>
-                    </article>
+                    </div>
 
-                    <article class="skill-card">
-                        <div class="skill-card__header">
-                            <span class="skill-card__icon" aria-hidden="true">⚡</span>
-                            <span class="skill-card__category">Frontend / JS</span>
+                    <!-- Backend -->
+                    <div class="skills__category">
+                        <header class="skills__category-header">
+                            <svg class="skills__category-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                                <rect x="2" y="2" width="20" height="8" rx="2" ry="2" />
+                                <rect x="2" y="14" width="20" height="8" rx="2" ry="2" />
+                                <line x1="6" y1="6" x2="6.01" y2="6" />
+                                <line x1="6" y1="18" x2="6.01" y2="18" />
+                            </svg>
+                            <span class="skills__category-name">Backend &amp; Frameworks</span>
+                        </header>
+                        <div class="skills__grid">
+
+                            <article class="skill-card">
+                                <div class="skill-card__icon" aria-hidden="true">
+                                    <svg viewBox="0 0 24 24">
+                                        <rect width="24" height="24" rx="4" fill="#512BD4" />
+                                        <path fill="#fff"
+                                            d="M7.2 15.5c-1.9 0-3.3-1.4-3.3-3.5 0-2 1.4-3.5 3.3-3.5 1.2 0 2.1.5 2.6 1.4l-1.3.9c-.3-.5-.7-.8-1.3-.8-1 0-1.8.8-1.8 2s.8 2 1.8 2c.6 0 1-.3 1.3-.8l1.3.9c-.5.9-1.4 1.4-2.6 1.4zm3.8 0V8.7h1.6l3.5 4.8V8.7h1.6v6.8h-1.5l-3.6-5v5h-1.6zm8.2 0V8.7h4v1.5h-2.5v1.2h2.2v1.4h-2.2v1.2h2.5v1.5h-4z" />
+                                    </svg>
+                                </div>
+                                <span class="skill-card__name">.NET Core &amp; .NET</span>
+                            </article>
+
+                            <article class="skill-card">
+                                <div class="skill-card__icon" aria-hidden="true">
+                                    <svg viewBox="0 0 24 24">
+                                        <rect width="24" height="24" rx="4" fill="#092E20" />
+                                        <path fill="#44B78B"
+                                            d="M12 4.5c-4.1 0-7.5 3.4-7.5 7.5s3.4 7.5 7.5 7.5 7.5-3.4 7.5-7.5-3.4-7.5-7.5-7.5zm0 13c-3 0-5.5-2.5-5.5-5.5S9 6.5 12 6.5s5.5 2.5 5.5 5.5-2.5 5.5-5.5 5.5zm0-8.5c-1.7 0-3 1.3-3 3s1.3 3 3 3 3-1.3 3-3-1.3-3-3-3z" />
+                                    </svg>
+                                </div>
+                                <span class="skill-card__name">Django</span>
+                            </article>
+
                         </div>
-                        <h3>JavaScript (ES6+)</h3>
-                        <p class="skill-card__level">Nivel: Intermedio - Avanzado</p>
-                        <p>Manipulación avanzada del DOM, eventos, programación asíncrona, Fetch API, HTML5 Canvas y lógica modular orientada a objetos.</p>
-                    </article>
+                    </div>
 
-                    <article class="skill-card">
-                        <div class="skill-card__header">
-                            <span class="skill-card__icon" aria-hidden="true">⚙️</span>
-                            <span class="skill-card__category">Backend</span>
+                    <!-- Bases de Datos -->
+                    <div class="skills__category">
+                        <header class="skills__category-header">
+                            <svg class="skills__category-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                                <ellipse cx="12" cy="5" rx="9" ry="3" />
+                                <path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3" />
+                                <path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5" />
+                            </svg>
+                            <span class="skills__category-name">Bases de Datos</span>
+                        </header>
+                        <div class="skills__grid">
+
+
+                            <article class="skill-card">
+                                <div class="skill-card__icon" aria-hidden="true">
+                                    <svg viewBox="0 0 24 24">
+                                        <path fill="#CC292B"
+                                            d="M12 3c-4.4 0-8 1.3-8 3v12c0 1.7 3.6 3 8 3s8-1.3 8-3V6c0-1.7-3.6-3-8-3zm0 2c3.9 0 6 1.1 6 1s-2.1 1-6 1-6-1-6-1 2.1-1 6-1zm6 13c0 .1-2.1 1-6 1s-6-.9-6-1v-2.2c1.6.8 3.7 1.2 6 1.2s4.4-.4 6-1.2V18zm0-4c0 .1-2.1 1-6 1s-6-.9-6-1v-2.2c1.6.8 3.7 1.2 6 1.2s4.4-.4 6-1.2V14zm0-4c0 .1-2.1 1-6 1s-6-.9-6-1V7.8c1.6.8 3.7 1.2 6 1.2s4.4-.4 6-1.2V10z" />
+                                    </svg>
+                                </div>
+                                <span class="skill-card__name">SQL Server</span>
+                            </article>
+
+                            <article class="skill-card">
+                                <div class="skill-card__icon" aria-hidden="true">
+                                    <img src="https://images.icon-icons.com/1381/PNG/512/mysqlworkbench_93532.png"
+                                        alt="MySQL" width="32" height="32" loading="lazy">
+                                </div>
+                                <span class="skill-card__name">MySQL</span>
+                            </article>
+
                         </div>
-                        <h3>Node.js & APIs REST</h3>
-                        <p class="skill-card__level">Nivel: Intermedio</p>
-                        <p>Construcción y consumo de servicios RESTful, control de rutas, validación de peticiones, middleware y manejo estructurado de datos JSON.</p>
-                    </article>
+                    </div>
 
-                    <article class="skill-card">
-                        <div class="skill-card__header">
-                            <span class="skill-card__icon" aria-hidden="true">🐙</span>
-                            <span class="skill-card__category">Herramientas</span>
+                    <!-- Herramientas y Entornos -->
+                    <div class="skills__category">
+                        <header class="skills__category-header">
+                            <svg class="skills__category-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                                <path
+                                    d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z" />
+                            </svg>
+                            <span class="skills__category-name">Herramientas &amp; Entornos</span>
+                        </header>
+                        <div class="skills__grid">
+
+                            <article class="skill-card">
+                                <div class="skill-card__icon" aria-hidden="true">
+                                    <svg viewBox="0 0 24 24">
+                                        <path fill="#F05032"
+                                            d="M21.6 10.9L13.1 2.4c-.6-.6-1.5-.6-2.1 0L8.7 4.7l2.8 2.8c.6-.2 1.3 0 1.8.5.5.5.6 1.3.4 1.9l2.7 2.7c.6-.2 1.3 0 1.9.4.8.8.8 2.1 0 2.9-.8.8-2.1.8-2.9 0-.6-.6-.7-1.4-.4-2.1l-2.5-2.5v5.3c.2.2.3.4.3.7 0 1-.8 1.8-1.8 1.8s-1.8-.8-1.8-1.8c0-.7.4-1.3 1-1.6V8.9c-.6-.3-1-.9-1-1.6 0-.6.3-1.2.7-1.5L4.7 8.7c-.6.6-.6 1.5 0 2.1l8.5 8.5c.6.6 1.5.6 2.1 0l6.3-6.3c.6-.6.6-1.5 0-2.1z" />
+                                    </svg>
+                                </div>
+                                <span class="skill-card__name">Git</span>
+                            </article>
+
+                            <article class="skill-card">
+                                <div class="skill-card__icon" aria-hidden="true">
+                                    <svg viewBox="0 0 24 24">
+                                        <rect width="24" height="24" rx="4" fill="#181717" />
+                                        <path fill="#fff"
+                                            d="M12 2C6.48 2 2 6.48 2 12c0 4.42 2.87 8.17 6.84 9.49.5.09.68-.22.68-.48v-1.7c-2.78.6-3.37-1.34-3.37-1.34-.45-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.61.07-.61 1 .07 1.53 1.03 1.53 1.03.89 1.52 2.34 1.08 2.91.83.09-.64.35-1.08.63-1.33-2.22-.25-4.55-1.11-4.55-4.94 0-1.09.39-1.98 1.03-2.68-.1-.25-.45-1.27.1-2.64 0 0 .84-.27 2.75 1.02A9.56 9.56 0 0 1 12 6.8c.85 0 1.71.11 2.51.33 1.91-1.29 2.75-1.02 2.75-1.02.55 1.37.2 2.39.1 2.64.64.7 1.03 1.59 1.03 2.68 0 3.84-2.34 4.69-4.57 4.94.36.31.68.92.68 1.85v2.74c0 .27.18.58.69.48A10 10 0 0 0 22 12c0-5.52-4.48-10-10-10z" />
+                                    </svg>
+                                </div>
+                                <span class="skill-card__name">GitHub</span>
+                            </article>
+
+                            <article class="skill-card">
+                                <div class="skill-card__icon" aria-hidden="true">
+                                    <img src="https://www.returngis.net/wp-content/uploads/2015/11/VS-Code.png"
+                                        alt="Visual Studio Code" width="32" height="32" loading="lazy">
+                                </div>
+                                <span class="skill-card__name">Visual Studio Code</span>
+                            </article>
+
+                            <article class="skill-card">
+                                <div class="skill-card__icon" aria-hidden="true">
+                                    <svg viewBox="0 0 24 24">
+                                        <path fill="#5C2D91"
+                                            d="M17.5 2L8.9 9.9 4.3 6.4 2 7.7l4.4 4.3L2 16.3l2.3 1.3 4.6-3.5 8.6 7.9 4.5-2.1V4.1L17.5 2zm.5 5.5v9l-5.6-4.5 5.6-4.5z" />
+                                    </svg>
+                                </div>
+                                <span class="skill-card__name">Visual Studio Community</span>
+                            </article>
+
+                            <article class="skill-card">
+                                <div class="skill-card__icon" aria-hidden="true">
+                                    <img src="https://miro.medium.com/1*YCV99o2CWe_txaatOclaWA.png" alt="Antigravity"
+                                        width="32" height="32" loading="lazy">
+                                </div>
+                                <span class="skill-card__name">Antigravity</span>
+                            </article>
+
                         </div>
-                        <h3>Git & GitHub</h3>
-                        <p class="skill-card__level">Nivel: Intermedio</p>
-                        <p>Control de versiones profesional, gestión de ramas, resolución de conflictos, Pull Requests y despliegues continuos.</p>
-                    </article>
+                    </div>
 
-                    <article class="skill-card">
-                        <div class="skill-card__header">
-                            <span class="skill-card__icon" aria-hidden="true">🎨</span>
-                            <span class="skill-card__category">Diseño</span>
-                        </div>
-                        <h3>Figma & UI Systems</h3>
-                        <p class="skill-card__level">Nivel: Intermedio</p>
-                        <p>Lectura de sistemas de diseño, jerarquía visual, espaciado consistente, tokens tipográficos y fidelidad en maquetación.</p>
-                    </article>
-
-                    <article class="skill-card">
-                        <div class="skill-card__header">
-                            <span class="skill-card__icon" aria-hidden="true">🗄️</span>
-                            <span class="skill-card__category">Bases de Datos</span>
-                        </div>
-                        <h3>Gestión de Datos & JSON</h3>
-                        <p class="skill-card__level">Nivel: Intermedio</p>
-                        <p>Modelado de datos para catálogos e inventarios, persistencia local con LocalStorage e integración con fuentes de datos externas.</p>
-                    </article>
-
-                </div>
+                </div><!-- /skills__wrapper -->
             </div>
         </section>
 
-        <!-- PROYECTOS DESTACADOS -->
-        <section id="proyectos" class="section">
+        <!-- ═══════════════════════════════
+             PROYECTOS DESTACADOS
+             ═══════════════════════════════ -->
+        <section id="proyectos" class="section section--surface" aria-labelledby="projects-title">
             <div class="container">
-                <h2 class="section__title">Proyectos Destacados</h2>
+                <span class="section__label">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+                        aria-hidden="true">
+                        <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z" />
+                        <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z" />
+                    </svg>
+                    Mis trabajos
+                </span>
+                <h2 class="section__title section__title--center" id="projects-title">Proyectos Destacados</h2>
+                <p class="section__desc section__desc--center">
+                    Proyectos representativos que muestran mis habilidades en frontend, backend y APIs.
+                </p>
 
-                <!-- Filtro de proyectos (Funcionalidad JS) -->
-                <div class="filter-buttons">
-                    <button class="btn btn--filter active" data-filter="all">Todos</button>
-                    <button class="btn btn--filter" data-filter="frontend">Frontend</button>
-                    <button class="btn btn--filter" data-filter="js">JavaScript</button>
-                    <button class="btn btn--filter" data-filter="backend">Backend</button>
+                <!-- Filtros -->
+                <div class="filter-bar" role="group" aria-label="Filtrar proyectos">
+                    <button class="btn--filter active" data-filter="all">Todos</button>
+                    <button class="btn--filter" data-filter="frontend">Frontend</button>
+                    <button class="btn--filter" data-filter="csharp">C# / Unity</button>
+                    <button class="btn--filter" data-filter="backend">Backend</button>
                 </div>
 
                 <div class="projects__grid">
 
-                    <!-- PROYECTO 1 -->
+                    <!-- PROYECTO 1: Tienda Online -->
                     <article class="card-project" data-category="frontend js">
+                        <div class="card-project__accent" aria-hidden="true"></div>
                         <figure class="card-project__figure">
-                            <img src="https://images.unsplash.com/photo-1472851294608-062f824d29cc?auto=format&fit=crop&q=80&w=600"
-                                alt="Vista previa de la Tienda Online E-commerce" class="card-project__img">
+                            <img src="img/pro1.png" alt="Vista previa de la Tienda Online E-commerce"
+                                class="card-project__img" loading="lazy">
                             <figcaption>Plataforma interactiva de comercio electrónico</figcaption>
                         </figure>
                         <div class="card-project__body">
                             <h3>Tienda Online E-commerce</h3>
-                            <p class="card-project__problem"><strong>Problema que resuelve:</strong> Facilita una experiencia de compra intuitiva y dinámica, resolviendo la navegación de catálogo de productos, visualización de detalles y gestión reactiva de carrito de compras en entornos multidispositivo.</p>
+                            <p class="card-project__problem">
+                                <strong>Problema que resuelve:</strong> Facilita una experiencia de compra
+                                intuitiva y dinámica — navegación de catálogo, visualización de detalles de
+                                producto y gestión reactiva del carrito en entornos multidispositivo.
+                            </p>
                             <div class="card-project__tags">
                                 <span class="badge">HTML5</span>
                                 <span class="badge">CSS3</span>
@@ -180,49 +400,58 @@
                                 <span class="badge">Vercel</span>
                             </div>
                             <div class="card-project__links">
-                                <a href="https://github.com/gabriel-asuncion-20/Tienda-Online-Ecommerce" target="_blank" rel="noopener noreferrer"
-                                    class="btn btn--secondary btn--sm">Repositorio</a>
-                                <a href="https://prueba-proyecto-01-b9kw.vercel.app/" target="_blank" rel="noopener noreferrer"
-                                    class="btn btn--primary btn--sm">Ver Proyecto</a>
+                                <a href="https://github.com/gabriel-asuncion-20/Tienda-Online-Ecommerce" target="_blank"
+                                    rel="noopener noreferrer" class="btn btn--ghost btn--sm">Repositorio</a>
+                                <a href="https://prueba-proyecto-01-b9kw.vercel.app/" target="_blank"
+                                    rel="noopener noreferrer" class="btn btn--primary btn--sm">Ver Proyecto</a>
                             </div>
                         </div>
                     </article>
 
-                    <!-- PROYECTO 2 -->
-                    <article class="card-project" data-category="frontend js">
+                    <!-- PROYECTO 2: PONG GAME -->
+                    <article class="card-project" data-category="frontend csharp">
+                        <div class="card-project__accent" aria-hidden="true"></div>
                         <figure class="card-project__figure">
-                            <img src="https://images.unsplash.com/photo-1550745165-9bc0b252726f?auto=format&fit=crop&q=80&w=600"
-                                alt="Vista previa del videojuego Pong" class="card-project__img">
-                            <figcaption>Videojuego Pong desarrollado con HTML5 Canvas y JavaScript</figcaption>
+                            <img src="./img/pro2.png" alt="Vista previa del videojuego Pong" class="card-project__img"
+                                loading="lazy">
+                            <figcaption>Videojuego Pong desarrollado con C# y Unity</figcaption>
                         </figure>
                         <div class="card-project__body">
-                            <h3>PONG GAME - Arcade Clásico</h3>
-                            <p class="card-project__problem"><strong>Problema que resuelve:</strong> Implementa de raíz la lógica física y matemática de un videojuego en 2D en tiempo real, resolviendo cálculo vectorial de rebotes, detección precisa de colisiones y bucle de renderizado a 60 FPS sin depender de librerías externas.</p>
+                            <h3>PONG GAME — Arcade Clásico</h3>
+                            <p class="card-project__problem">
+                                <strong>Problema que resuelve:</strong> Implementa desde cero la lógica física
+                                y matemática de un videojuego 2D en tiempo real — cálculo vectorial de rebotes,
+                                detección precisa de colisiones y bucle de juego gestionado por el motor Unity
+                                usando C# como lenguaje principal.
+                            </p>
                             <div class="card-project__tags">
-                                <span class="badge">JavaScript (ES6+)</span>
-                                <span class="badge">HTML5 Canvas</span>
+                                <span class="badge">C#</span>
+                                <span class="badge">Unity</span>
                                 <span class="badge">Game Loop</span>
-                                <span class="badge">CSS3</span>
+                                <span class="badge">2D Physics</span>
                             </div>
                             <div class="card-project__links">
-                                <a href="https://github.com/gabriel-asuncion-20/PONG-GAME" target="_blank" rel="noopener noreferrer"
-                                    class="btn btn--secondary btn--sm">Repositorio</a>
-                                <a href="https://github.com/gabriel-asuncion-20/PONG-GAME" target="_blank" rel="noopener noreferrer"
-                                    class="btn btn--primary btn--sm">Ver Código</a>
+                                <a href="https://github.com/gabriel-asuncion-20/PONG-GAME" target="_blank"
+                                    rel="noopener noreferrer" class="btn btn--ghost btn--sm">Repositorio</a>
                             </div>
                         </div>
                     </article>
 
-                    <!-- PROYECTO 3 -->
+                    <!-- PROYECTO 3: Ecommerce Inventory API -->
                     <article class="card-project" data-category="backend">
+                        <div class="card-project__accent" aria-hidden="true"></div>
                         <figure class="card-project__figure">
-                            <img src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&q=80&w=600"
-                                alt="Vista previa de la arquitectura de la API de inventario" class="card-project__img">
+                            <img src="./img/pro3.png" alt="Vista previa de la arquitectura de la API de inventario"
+                                class="card-project__img" loading="lazy">
                             <figcaption>Arquitectura backend y endpoints para gestión de inventario</figcaption>
                         </figure>
                         <div class="card-project__body">
                             <h3>Ecommerce Inventory API</h3>
-                            <p class="card-project__problem"><strong>Problema que resuelve:</strong> Proporciona un servicio backend robusto y centralizado para la administración de inventario en plataformas de comercio electrónico, permitiendo operaciones CRUD sobre existencias, validación de stock y consultas estandarizadas en formato JSON.</p>
+                            <p class="card-project__problem">
+                                <strong>Problema que resuelve:</strong> Proporciona un servicio backend robusto
+                                para la administración centralizada de inventario — operaciones CRUD,
+                                validación de stock y consultas estandarizadas en formato JSON.
+                            </p>
                             <div class="card-project__tags">
                                 <span class="badge">Node.js</span>
                                 <span class="badge">REST API</span>
@@ -230,10 +459,8 @@
                                 <span class="badge">Backend</span>
                             </div>
                             <div class="card-project__links">
-                                <a href="https://github.com/gabriel-asuncion-20/Ecommerce-Inventory-Api" target="_blank" rel="noopener noreferrer"
-                                    class="btn btn--secondary btn--sm">Repositorio</a>
-                                <a href="https://github.com/gabriel-asuncion-20/Ecommerce-Inventory-Api" target="_blank" rel="noopener noreferrer"
-                                    class="btn btn--primary btn--sm">Documentación</a>
+                                <a href="https://github.com/gabriel-asuncion-20/Ecommerce-Inventory-Api" target="_blank"
+                                    rel="noopener noreferrer" class="btn btn--ghost btn--sm">Repositorio</a>
                             </div>
                         </div>
                     </article>
@@ -242,196 +469,105 @@
             </div>
         </section>
 
-        <!-- DESIGN SYSTEM / COMPONENTES -->
-        <section id="design-system" class="section surface-bg">
+        <!-- ═══════════════════════════════
+             CONTACTO PROFESIONAL
+             ═══════════════════════════════ -->
+        <section id="contacto" class="section" aria-labelledby="contact-title">
             <div class="container">
-                <h2 class="section__title">Design System & Componentes</h2>
-                <p class="section__subtitle">Documentación visual de los tokens de diseño y componentes reutilizables que estructuran el portafolio.</p>
+                <span class="section__label">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+                        aria-hidden="true">
+                        <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
+                        <polyline points="22,6 12,13 2,6" />
+                    </svg>
+                    Hablemos
+                </span>
+                <h2 class="section__title" id="contact-title">Contacto Profesional</h2>
 
-                <!-- Colores -->
-                <article class="ds-block">
-                    <h3>1. Paleta de Colores</h3>
-                    <div class="ds-colors">
-                        <div class="color-swatch swatch-primary">
-                            <strong>Primary</strong>
-                            <span>--color-primary</span>
-                            <span>#2563eb</span>
-                        </div>
-                        <div class="color-swatch swatch-secondary">
-                            <strong>Secondary</strong>
-                            <span>--color-secondary</span>
-                            <span>#7c3aed</span>
-                        </div>
-                        <div class="color-swatch swatch-background">
-                            <strong>Background</strong>
-                            <span>--color-background</span>
-                            <span>#ffffff / #0f172a</span>
-                        </div>
-                        <div class="color-swatch swatch-surface">
-                            <strong>Surface</strong>
-                            <span>--color-surface</span>
-                            <span>#f8fafc / #1e293b</span>
-                        </div>
-                        <div class="color-swatch swatch-text">
-                            <strong>Text</strong>
-                            <span>--color-text</span>
-                            <span>#0f172a / #f8fafc</span>
-                        </div>
-                        <div class="color-swatch swatch-border">
-                            <strong>Border</strong>
-                            <span>--color-border</span>
-                            <span>#e2e8f0 / #334155</span>
+                <div class="contact__layout">
+
+                    <!-- Info lateral -->
+                    <div class="contact__info">
+                        <h3 class="contact__info-title">¿Tienes un proyecto en mente?</h3>
+                        <p class="contact__info-desc">
+                            Estoy abierto a oportunidades de colaboración, proyectos freelance o
+                            posiciones en equipos de desarrollo. Escríbeme y hablemos.
+                        </p>
+
+                        <div class="contact__socials">
+                            <a href="https://github.com/gabriel-asuncion-20" target="_blank" rel="noopener noreferrer"
+                                class="contact__social-link">
+                                <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                                    <path
+                                        d="M12 2C6.48 2 2 6.48 2 12c0 4.42 2.87 8.17 6.84 9.49.5.09.68-.22.68-.48v-1.7c-2.78.6-3.37-1.34-3.37-1.34-.45-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.61.07-.61 1 .07 1.53 1.03 1.53 1.03.89 1.52 2.34 1.08 2.91.83.09-.64.35-1.08.63-1.33-2.22-.25-4.55-1.11-4.55-4.94 0-1.09.39-1.98 1.03-2.68-.1-.25-.45-1.27.1-2.64 0 0 .84-.27 2.75 1.02A9.56 9.56 0 0 1 12 6.8c.85 0 1.71.11 2.51.33 1.91-1.29 2.75-1.02 2.75-1.02.55 1.37.2 2.39.1 2.64.64.7 1.03 1.59 1.03 2.68 0 3.84-2.34 4.69-4.57 4.94.36.31.68.92.68 1.85v2.74c0 .27.18.58.69.48A10 10 0 0 0 22 12c0-5.52-4.48-10-10-10z" />
+                                </svg>
+                                GitHub — @gabriel-asuncion-20
+                            </a>
+                            <a href="https://www.linkedin.com/in/gabriel-andres-asuncion-perez-b00204269/"
+                                target="_blank" rel="noopener noreferrer" class="contact__social-link">
+                                <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                                    <path
+                                        d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6zM2 9h4v12H2z" />
+                                    <circle cx="4" cy="4" r="2" />
+                                </svg>
+                                LinkedIn — Gabriel Asunción
+                            </a>
                         </div>
                     </div>
-                </article>
 
-                <!-- Tipografía -->
-                <article class="ds-block">
-                    <h3>2. Jerarquía Tipográfica</h3>
-                    <div class="ds-typography-samples">
-                        <p class="type-h1-sample">Encabezado H1 (2.5rem / 40px)</p>
-                        <p class="type-h2-sample">Encabezado H2 (2.0rem / 32px)</p>
-                        <p class="type-h3-sample">Encabezado H3 (1.5rem / 24px)</p>
-                        <p>Párrafo de texto base (1rem / 16px). Tipografía optimizada para lectura fluida y contraste accesible.</p>
-                        <p class="text-muted">Texto secundario / atenuado (0.875rem / 14px) para etiquetas, fechas y subtítulos descriptivos.</p>
-                        <p><a href="#design-system" class="type-link-sample">Ejemplo de Enlace Interactivo (&lt;a&gt;) con estado hover</a></p>
-                    </div>
-                </article>
-
-                <!-- Espaciado -->
-                <article class="ds-block">
-                    <h3>3. Escala de Espaciado</h3>
-                    <div class="ds-spacing">
-                        <div class="space-box space-sm">sm (0.5rem - 8px)</div>
-                        <div class="space-box space-md">md (1rem - 16px)</div>
-                        <div class="space-box space-lg">lg (2rem - 32px)</div>
-                    </div>
-                </article>
-
-                <!-- Componentes UI Reutilizables -->
-                <article class="ds-block">
-                    <h3>4. Muestrario de Componentes Reutilizables</h3>
-                    <div class="ds-components-grid">
-
-                        <!-- Botones y Badges -->
-                        <div class="ds-subcomponent">
-                            <h4>Botones & Badges</h4>
-                            <div style="display: flex; gap: 0.5rem; flex-wrap: wrap; align-items: center; margin-bottom: 0.75rem;">
-                                <button class="btn btn--primary">Botón Primario</button>
-                                <button class="btn btn--secondary">Botón Secundario</button>
-                                <button class="btn btn--primary btn--sm">Botón SM</button>
-                            </div>
-                            <div style="display: flex; gap: 0.5rem; flex-wrap: wrap;">
-                                <span class="badge">Badge/Tag</span>
-                                <span class="badge">HTML5</span>
-                                <span class="badge">JavaScript</span>
-                            </div>
+                    <!-- Formulario -->
+                    <form class="contact-form" id="contactForm" novalidate aria-label="Formulario de contacto">
+                        <div class="form-group">
+                            <label for="nombre">Nombre completo</label>
+                            <input type="text" id="nombre" name="nombre" required minlength="3"
+                                placeholder="Tu nombre completo" autocomplete="name">
+                            <span class="error-message" id="errorNombre" role="alert"></span>
                         </div>
 
-                        <!-- Form Inputs & Textarea -->
-                        <div class="ds-subcomponent">
-                            <h4>Inputs & Textarea</h4>
-                            <div class="form-group" style="margin-bottom: 0.5rem;">
-                                <label for="dsInputSample">Campo de texto</label>
-                                <input type="text" id="dsInputSample" placeholder="Ejemplo de input" readonly value="Texto de muestra">
-                            </div>
-                            <div class="form-group">
-                                <label for="dsTextareaSample">Área de texto</label>
-                                <textarea id="dsTextareaSample" rows="2" readonly placeholder="Ejemplo de textarea">Contenido de demostración del componente textarea.</textarea>
-                            </div>
+                        <div class="form-group">
+                            <label for="email">Correo electrónico</label>
+                            <input type="email" id="email" name="email" required placeholder="tu@correo.com"
+                                autocomplete="email">
+                            <span class="error-message" id="errorEmail" role="alert"></span>
                         </div>
 
-                        <!-- Navbar representativo -->
-                        <div class="ds-subcomponent" style="grid-column: 1 / -1;">
-                            <h4>Barra de Navegación (Navbar)</h4>
-                            <div class="ds-mini-nav">
-                                <a href="#inicio" class="logo">Gabriel<span>.dev</span></a>
-                                <ul>
-                                    <li><a href="#inicio">Inicio</a></li>
-                                    <li><a href="#skills">Skills</a></li>
-                                    <li><a href="#proyectos">Proyectos</a></li>
-                                    <li><a href="#contacto">Contacto</a></li>
-                                </ul>
-                            </div>
+                        <div class="form-group">
+                            <label for="mensaje">Mensaje</label>
+                            <textarea id="mensaje" name="mensaje" rows="5" required minlength="10"
+                                placeholder="Cuéntame sobre tu proyecto o consulta..."></textarea>
+                            <span class="error-message" id="errorMensaje" role="alert"></span>
                         </div>
 
-                        <!-- Card de Proyecto representativa -->
-                        <div class="ds-subcomponent" style="grid-column: 1 / -1;">
-                            <h4>Card de Proyecto (Componente Reutilizable)</h4>
-                            <div style="max-width: 400px; margin: 0 auto;">
-                                <article class="card-project">
-                                    <figure class="card-project__figure">
-                                        <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=500"
-                                            alt="Vista previa de componente card de ejemplo" class="card-project__img">
-                                        <figcaption>Ejemplo demostrativo del componente Card</figcaption>
-                                    </figure>
-                                    <div class="card-project__body">
-                                        <h3>Card de Proyecto Ejemplo</h3>
-                                        <p class="card-project__problem"><strong>Problema que resuelve:</strong> Estructuración consistente de información de proyectos con imagen, descripción, tags y acciones.</p>
-                                        <div class="card-project__tags">
-                                            <span class="badge">Componente</span>
-                                            <span class="badge">Modular</span>
-                                        </div>
-                                        <div class="card-project__links">
-                                            <button class="btn btn--secondary btn--sm">Código</button>
-                                            <button class="btn btn--primary btn--sm">Demo</button>
-                                        </div>
-                                    </div>
-                                </article>
-                            </div>
-                        </div>
+                        <button type="submit" class="btn btn--primary" id="submitBtn">Enviar Mensaje</button>
+                        <p class="form-feedback" id="formFeedback" role="status" aria-live="polite"></p>
+                    </form>
 
-                    </div>
-                </article>
+                </div>
             </div>
         </section>
 
-        <!-- CONTACTO -->
-        <section id="contacto" class="section">
-            <div class="container">
-                <h2 class="section__title">Contacto Profesional</h2>
-                <form class="contact-form" id="contactForm" novalidate>
-                    <div class="form-group">
-                        <label for="nombre">Nombre completo</label>
-                        <input type="text" id="nombre" name="nombre" required placeholder="Tu nombre">
-                        <span class="error-message" id="errorNombre"></span>
-                    </div>
-
-                    <div class="form-group">
-                        <label for="email">Correo electrónico</label>
-                        <input type="email" id="email" name="email" required placeholder="tu@email.com">
-                        <span class="error-message" id="errorEmail"></span>
-                    </div>
-
-                    <div class="form-group">
-                        <label for="mensaje">Mensaje</label>
-                        <textarea id="mensaje" name="mensaje" rows="5" required
-                            placeholder="Escribe tu mensaje aquí..."></textarea>
-                        <span class="error-message" id="errorMensaje"></span>
-                    </div>
-
-                    <button type="submit" class="btn btn--primary">Enviar Mensaje</button>
-                    <p class="form-feedback" id="formFeedback"></p>
-                </form>
-            </div>
-        </section>
     </main>
 
-    <!-- FOOTER -->
+    <!-- ═══════════════════════════════
+         FOOTER
+         ═══════════════════════════════ -->
     <footer class="footer">
         <div class="container footer__container">
             <p>&copy; 2026 Gabriel Asunción. Todos los derechos reservados.</p>
             <div class="footer__socials">
-                <a href="https://github.com/gabriel-asuncion-20" target="_blank" rel="noopener noreferrer">GitHub (@gabriel-asuncion-20)</a>
-                <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+                <a href="https://github.com/gabriel-asuncion-20" target="_blank" rel="noopener noreferrer">GitHub</a>
+                <a href="https://www.linkedin.com/in/gabriel-andres-asuncion-perez-b00204269/" target="_blank"
+                    rel="noopener noreferrer">LinkedIn</a>
             </div>
         </div>
     </footer>
 
-    <!-- BOTÓN VOLVER ARRIBA -->
-    <button class="back-to-top" id="backToTop" aria-label="Volver arriba">↑</button>
+    <!-- Botón volver arriba -->
+    <button class="back-to-top" id="backToTop" aria-label="Volver al inicio">↑</button>
 
-    <script src="script.js"></script>
+    <!-- JavaScript: carpeta js/ -->
+    <script src="js/main.js"></script>
+
 </body>
 
 </html>
